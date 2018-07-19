@@ -57,7 +57,7 @@ export default class SectionList extends Component {
     const targetY = ev.pageY;
     const { y, width, height } = this.measure;
     const index = (Math.floor(ev.locationY / height));
-    if (index >= this.props.sections.length) {
+    if (index < 0 || index >= this.props.sections.length) {
       return;
     }
 
